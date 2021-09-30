@@ -1,20 +1,20 @@
-//A. Defining Variables
-    //1. Title
+// Defining Variables
+    // Title
 var PsPl = document.getElementById("PsPl")
 var SP = document.getElementById("SP")
 var Bank = document.getElementById("Bank")
 var FP = document.getElementById("FP")
 var Rst = document.getElementById("Rst")
 var RobP = document.getElementById("RobP")
-    //2.Stores
-        //a. Count Display
+    //Stores
+        // Count Display
 var SB = document.getElementById("SB")
 var S1C = document.getElementById("S1C")
 var S2C = document.getElementById("S2C")
 var S3C = document.getElementById("S3C")
 var S4C = document.getElementById("S4C")
 var S5C = document.getElementById("S5C")
-        //b. Count and Profit
+        // Count and Profit
 var S1Count =1
 var S2Count =0
 var S3Count =0
@@ -26,27 +26,27 @@ var S2Profit =0
 var S3Profit =0
 var S4Profit =0
 var S5Profit =0
-        //c. Upgrade Buttons
+        // Upgrade Buttons
 var S1U = document.getElementById("S1U")
 var S2U = document.getElementById("S2U")
 var S3U = document.getElementById("S3U")
 var S4U = document.getElementById("S4U")
-        //d. Sell Buttons
+        // Sell Buttons
 var S1S =document.getElementById("S1S")
 var S2S =document.getElementById("S2S")
 var S3S =document.getElementById("S3S")
 var S4S =document.getElementById("S4S")
 var S5S =document.getElementById("S5S")
 
-    //3. Factories
-        //a. Count Display
+    // Factories
+        // Count Display
 var FB = document.getElementById("FB")
 var F1C = document.getElementById("F1C")
 var F2C = document.getElementById("F2C")
 var F3C = document.getElementById("F3C")
 var F4C = document.getElementById("F4C")
 var F5C = document.getElementById("F5C")
-        //b. Count and Profit
+        // Count and Profit
 var F1Count =1
 var F2Count =0
 var F3Count =0
@@ -58,27 +58,27 @@ var F2Profit =0
 var F3Profit =0
 var F4Profit =0
 var F5Profit =0
-        //c. Ugrade Buttons
+        // Ugrade Buttons
 var F1U = document.getElementById("F1U")
 var F2U = document.getElementById("F2U")
 var F3U = document.getElementById("F3U")
 var F4U = document.getElementById("F4U")
-        //d. Fell Buttons
+        // Fell Buttons
 var F1S =document.getElementById("F1S")
 var F2S =document.getElementById("F2S")
 var F3S =document.getElementById("F3S")
 var F4S =document.getElementById("F4S")
 var F5S =document.getElementById("F5S")
-    //4. General
+    // General
 var Timer;
 var Money =0;
 var Play=false;
-    //5. Game Over
+    // Game Over
 var End = document.getElementById("End")
 var gameOver =false
-    //6. robbing
+    // robbing
 var RP = 5
-//B. Defining Functions
+// Defining Functions
 
 // Game over - called when out of money
 function GO(){
@@ -104,26 +104,26 @@ function Rob(){
         RobP.style.color="#87CEEB"
     }
 }
-    //2. Action
+    // Action
 // callback that updates buttons and money 
 function timerAction(){
-        //a. Stores Profit
+        // Stores Profit
     S1Profit =S1Count
     S2Profit =S2Count*2
     S3Profit =S3Count*4
     S4Profit =S4Count*8
     S5Profit =S5Count*16
-        //b. Factory Profit
+        // Factory Profit
     F1Profit =F1Count
     F2Profit =F2Count*2
     F3Profit =F3Count*4
     F4Profit =F4Count*8
     F5Profit =F5Count*16
-        //c. Total Profits
+        // Total Profits
     SProfit =S1Profit+S2Profit+S3Profit+S4Profit+S5Profit
     FProfit =F1Profit+F2Profit+F3Profit+F4Profit+F5Profit
     Money +=SProfit
-        //d. Factory Produce with Store Produce
+        // Factory Produce with Store Produce
     if(FProfit<SProfit){
         Money -=((S1Profit-F2Profit)*4)
         FP.style.color ="red"
@@ -136,7 +136,7 @@ function timerAction(){
     RP = SProfit*5
     }
     Rob()
-        //e. Visual Updates
+        // Visual Updates
     S1C.innerText="Amount: "+S1Count
     S2C.innerText="Amount: "+S2Count
     S3C.innerText="Amount: "+S3Count
@@ -151,7 +151,7 @@ function timerAction(){
     Bank.innerText ="$"+Money
     FP.innerText =FProfit+" product per sec"
     RobP.innerText=RP+"% chance of being robbed"
-        //f. lvl1 button updates
+        // lvl1 button updates
     if(Money>=25){
         if(!SB.classList.contains("act")){
             SB.classList.add("act");
@@ -196,7 +196,7 @@ function timerAction(){
             F1S.classList.remove("act");
         }
     };
-        //g. lvl2 button updates
+        // lvl2 button updates
     if(Money>=50){
         if(!S1U.classList.contains("act")&&S1Count>=1){
             S1U.classList.add("act");
@@ -249,7 +249,7 @@ function timerAction(){
             F2S.classList.remove("act");
         }
     };
-        //h. lvl3 button updates
+        // lvl3 button updates
     if(Money>=100){
         if(!S2U.classList.contains("act")&&S2Count>=1){
             S2U.classList.add("act");
@@ -302,7 +302,7 @@ function timerAction(){
             F3S.classList.remove("act");
         }
     };
-        //i. lvl4 button updates
+        // lvl4 button updates
     if(Money>=200){
         if(!S3U.classList.contains("act")&&S3Count>=1){
             S3U.classList.add("act");
@@ -355,7 +355,7 @@ function timerAction(){
             F4S.classList.remove("act");
         }
     };
-        //j. lvl5 button updates
+        // lvl5 button updates
     if(Money>=400){
         if(!S4U.classList.contains("act")&&S4Count>=1){
             S4U.classList.add("act");
@@ -409,7 +409,7 @@ function timerAction(){
         }
     };
 
-        //k. game over
+        // game over
     if(Money<0){
         GO()
     };
@@ -417,12 +417,12 @@ function timerAction(){
         GO()
     };
 };
-    //3. Timer
+    // Timer
 function main(){
     Timer=setInterval(timerAction, 1000);
 };
-//C. Buttons
-    //1. Pause and Play
+// Buttons
+    // Pause and Play
 PsPl.addEventListener("click",function(){
     if(!gameOver){
         if(!Play){
@@ -437,12 +437,12 @@ PsPl.addEventListener("click",function(){
         };
     };
 });
-    //2. Restarting
+    // Restarting
 Rst.addEventListener("click",function(){
     window.location.reload()
 });
-    //3. Store Upgrades
-        //a. lvl1
+    // Store Upgrades
+        // lvl1
 SB.addEventListener("click",function(){
 if(Money>= 25){
     Money-= 25
@@ -450,7 +450,7 @@ if(Money>= 25){
     timerAction()
 }
 });
-        //b. lvl2
+        // lvl2
 S1U.addEventListener("click",function(){
 if(Money>= 50&&S1Count>=1){
     Money-= 50
@@ -459,7 +459,7 @@ if(Money>= 50&&S1Count>=1){
     timerAction()
 }
 });
-        //c. lvl3
+        // lvl3
 S2U.addEventListener("click",function(){
     if(Money>= 100&&S2Count>=1){
         Money-= 100
@@ -468,7 +468,7 @@ S2U.addEventListener("click",function(){
         timerAction()
     }
 });
-        //d. lvl4
+        // lvl4
 S3U.addEventListener("click",function(){
     if(Money>= 200&&S3Count>=1){
         Money-= 200
@@ -477,7 +477,7 @@ S3U.addEventListener("click",function(){
         timerAction()
     }
 });
-        //e. lvl5
+        // lvl5
 S4U.addEventListener("click",function(){
     if(Money>= 400&&S4Count>=1){
         Money-= 400
@@ -486,8 +486,8 @@ S4U.addEventListener("click",function(){
         timerAction()
     }
 });
-    //4. Store Selling
-        //a. lvl1
+    // Store Selling
+        // lvl1
 S1S.addEventListener("click",function(){
     if(S1Count>=1){
         Money+= 12
@@ -495,7 +495,7 @@ S1S.addEventListener("click",function(){
         timerAction()
     }
 });
-        //b. lvl2
+        // lvl2
 S2S.addEventListener("click",function(){
     if(S2Count>=1){
         Money+= 25
@@ -503,7 +503,7 @@ S2S.addEventListener("click",function(){
         timerAction()
     }
 });
-        //c. lvl3
+        // lvl3
 S3S.addEventListener("click",function(){
     if(S3Count>=1){
         Money+= 50
@@ -511,7 +511,7 @@ S3S.addEventListener("click",function(){
         timerAction()
     }
 });
-        //d. lvl4
+        // lvl4
 S4S.addEventListener("click",function(){
     if(S4Count>=1){
         Money+= 100
@@ -519,7 +519,7 @@ S4S.addEventListener("click",function(){
         timerAction()
     }
 });
-        //e. lvl5
+        // lvl5
 S5S.addEventListener("click",function(){
     if(S5Count>=1){
         Money+= 200
@@ -527,8 +527,8 @@ S5S.addEventListener("click",function(){
         timerAction()
     }
 });
-    //5. Factory Upgrades
-        //a. lvl1
+    // Factory Upgrades
+        // lvl1
 FB.addEventListener("click",function(){
     if(Money>= 25){
         Money-= 25
@@ -536,7 +536,7 @@ FB.addEventListener("click",function(){
         timerAction()
     }
 });
-        //b. lvl2
+        // lvl2
 F1U.addEventListener("click",function(){
     if(Money>= 50&&F1Count>=1){
         Money-= 50
@@ -545,7 +545,7 @@ F1U.addEventListener("click",function(){
         timerAction()
     }
 });
-        //c. lvl3
+        // lvl3
 F2U.addEventListener("click",function(){
     if(Money>= 100&&F2Count>=1){
         Money-= 100
@@ -554,7 +554,7 @@ F2U.addEventListener("click",function(){
         timerAction()
     }
 });
-        //d. lvl4
+        // lvl4
 F3U.addEventListener("click",function(){
     if(Money>= 200&&F3Count>=1){
         Money-= 200
@@ -563,7 +563,7 @@ F3U.addEventListener("click",function(){
         timerAction()
     }
 });
-        //3. lvl5
+        // lvl5
 F4U.addEventListener("click",function(){
     if(Money>= 400&&F4Count>=1){
         Money-= 400
@@ -572,8 +572,8 @@ F4U.addEventListener("click",function(){
         timerAction()
     }
 });
-    //6. Factory Selling        
-        //a. lvl1
+    // Factory Selling        
+        // lvl1
 F1S.addEventListener("click",function(){
     if(F1Count>=1){
         Money+= 12
@@ -581,7 +581,7 @@ F1S.addEventListener("click",function(){
         timerAction()
     }
 });
-        //b. lvl2
+        // lvl2
 F2S.addEventListener("click",function(){
     if(F2Count>=1){
         Money+= 25
@@ -589,7 +589,7 @@ F2S.addEventListener("click",function(){
         timerAction()
     }
 });
-        //c. lvl3
+        // lvl3
 F3S.addEventListener("click",function(){
     if(F3Count>=1){
         Money+= 50
@@ -597,7 +597,7 @@ F3S.addEventListener("click",function(){
         timerAction()
     }
 });
-        //d. lvl4
+        // lvl4
 F4S.addEventListener("click",function(){
     if(F4Count>=1){
         Money+= 100
@@ -605,7 +605,7 @@ F4S.addEventListener("click",function(){
         timerAction()
     }
 });
-        //e. lvl5
+        // lvl5
 F5S.addEventListener("click",function(){
     if(F5Count>=1){
         Money+= 200
