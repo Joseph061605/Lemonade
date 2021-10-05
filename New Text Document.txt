@@ -1,0 +1,46 @@
+
+    // Pactory Upgrades
+        // lvl1
+PB.addEventListener("click",function(){
+    if(Money>= 25){
+        Money-= 25
+        P1Count+= 1
+        timerAction()
+    }
+});
+        // lvl2
+P1U.addEventListener("click",function(){
+    if(Money>= 50&&P1Count>=1){
+        Money-= 50
+        P1Count-=1
+        P2Count+= 1
+        timerAction()
+    }
+});
+        // lvl3
+P2U.addEventListener("click",function(){
+    if(Money>= 100&&P2Count>=1){
+        Money-= 100
+        P2Count-=1
+        P3Count+= 1
+        timerAction()
+    }
+});
+        // lvl4
+P3U.addEventListener("click",function(){
+    if(Money>= 200&&P3Count>=1){
+        Money-= 200
+        P3Count-=1
+        P4Count+= 1
+        timerAction()
+    }
+});
+        // lvl5
+P4U.addEventListener("click",function(){
+    if(Money>= 400&&P4Count>=1){
+        Money-= 400
+        P4Count-=1
+        P5Count+= 1
+        timerAction()
+    }
+});

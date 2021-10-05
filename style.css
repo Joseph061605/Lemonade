@@ -8,7 +8,7 @@ body{
 #Title{
     display: grid;
     grid-template-columns: auto auto auto auto auto;
-    height: 140px;
+    height: 179px;
     margin-bottom: 50px;
     color: #87CEEB;
     background-color: #0300B3;
@@ -29,14 +29,12 @@ body{
 #gameOver{
     position: absolute;
     z-index: 1;
-    margin-top: 150px;
+    margin-top: 185px;
     width: 1536px;
-    height: 900px;
-    font-size:100px;
-    color: #0300B3;
+    height: 1200px;
+    font-size: 100px;
     background-color:#87CEEB;
-;
-}
+};
 .Header{
     font-size: 50px;
     margin-bottom: 50px;
