@@ -102,7 +102,7 @@ var P4S = document.getElementById("P4S")
 var P5S = document.getElementById("P5S")
 // General
 var Timer;
-var Money = 1000;
+var Money = 0;
 var Play = false;
 // Game Over
 var End = document.getElementById("End")
