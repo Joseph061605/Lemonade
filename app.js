@@ -102,7 +102,7 @@ var P4S =document.getElementById("P4S")
 var P5S =document.getElementById("P5S")     
     // General
 var Timer;
-var Money =0;
+var Money =1000;
 var Play=false;
     // Game Over
 var End = document.getElementById("End")
@@ -481,20 +481,20 @@ Rst.addEventListener("click",function(){
     // Store Upgrades
         // lvl1
 SB.addEventListener("click",function(){
-if(Money>= 25){
-    Money-= 25
-    S1Count+= 1
-    timerAction()
-}
+    if(Money>= 25){
+        Money-= 25
+        S1Count+= 1
+        timerAction()
+    }
 });
         // lvl2
 S1U.addEventListener("click",function(){
-if(Money>= 50&&S1Count>=1){
-    Money-= 50
-    S1Count-=1
-    S2Count+= 1
-    timerAction()
-}
+    if(Money>= 50&&S1Count>=1){
+        Money-= 50
+        S1Count-=1
+        S2Count+= 1
+        timerAction()
+    }
 });
         // lvl3
 S2U.addEventListener("click",function(){
