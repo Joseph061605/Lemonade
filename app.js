@@ -175,7 +175,7 @@ function timerAction() {
     if (PProfit <= SProfit) {
         RP = 100 - (Math.round((PProfit / SProfit) * 100));
     };
-    if (RP <= 100 && RP > 0) {
+    if (RP<=100&&RP>0) {
         Rob()
     };
 
