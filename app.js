@@ -110,7 +110,6 @@ var gameOver = false
 // robbing
 var RP = 0
 // Defining Functions
-
 // Game over - called when out of money
 function GO(reason) {
     Play = false;
