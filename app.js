@@ -281,6 +281,15 @@ function timerAction() {
         S4S.classList.add("disA");
         S4S.classList.remove("act");
     };
+    //lvl 5 sell
+    if (S5Count >= 1) {
+        S5S.classList.add("act");
+        S5S.classList.remove("disA");
+    }
+    else {
+        S5S.classList.add("disA");
+        S5S.classList.remove("act");
+    }
     // Factory button updates
     //buy
     if (Money >= 25) {
@@ -363,6 +372,15 @@ function timerAction() {
         F4S.classList.add("disA");
         F4S.classList.remove("act");
     };
+    //lvl 5 sell
+    if (F5Count >= 1) {
+        F5S.classList.add("act");
+        F5S.classList.remove("disA");
+    }
+    else {
+        F5S.classList.add("disA");
+        F5S.classList.remove("act");
+    }
     // Security button updates
     //buy
     if (Money >= 25) {
@@ -445,6 +463,15 @@ function timerAction() {
         P4S.classList.add("disA");
         P4S.classList.remove("act");
     };
+    //lvl 5 sell
+    if (P5Count >= 1) {
+        P5S.classList.add("act");
+        P5S.classList.remove("disA");
+    }
+    else {
+        P5S.classList.add("disA");
+        P5S.classList.remove("act");
+    }
     // game over
     if (Money < 0) {
         GO()
